@@ -210,16 +210,16 @@ public class StartActivity extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questionsList.add(new QuizModel("이번주에 계획한 시간에 일어난 일수", "0 ~ 1일",
-                "2 ~ 3일", "4일", "5 ~ 6일", "7일 모두"));
-        questionsList.add(new QuizModel("이번주에 친구와의 약속에 늦지 않은 횟수", "1회 이하",
-                "2회", "3회", "4회", "5회 이상"));
-        questionsList.add(new QuizModel("이번주에 내가 좋아하는 일을 한 횟수", "1회 이하",
-                "2회", "3회", "4회", "5회 이상"));
-        questionsList.add(new QuizModel("이번주에 누군가를 웃으면서 대한 횟수", "2회 이하",
-                "3회", "4회", "5회", "6회 이상"));
-        questionsList.add(new QuizModel("이번주에 누군가에게 받은 칭찬 횟수", "없음",
-                "1회", "2회", "3회", "4회 이상"));
+        questionsList.add(new QuizModel("이번주에 계획한 시간에 일어난 일수", " 0 ~ 1일",
+                " 2 ~ 3일", " 4일", " 5 ~ 6일", " 7일 모두"));
+        questionsList.add(new QuizModel("이번주에 친구와의 약속에 늦지 않은 횟수", " 1회 이하",
+                " 2회", " 3회", " 4회", " 5회 이상"));
+        questionsList.add(new QuizModel(" 이번주에 내가 좋아하는 일을 한 횟수", " 1회 이하",
+                " 2회", " 3회", " 4회", " 5회 이상"));
+        questionsList.add(new QuizModel("이번주에 누군가를 웃으면서 대한 횟수", " 2회 이하",
+                " 3회", " 4회", "5회", "6회 이상"));
+        questionsList.add(new QuizModel("이번주에 누군가에게 받은 칭찬 횟수", " 없음",
+                " 1회", " 2회", " 3회", " 4회 이상"));
     }
 
 }
