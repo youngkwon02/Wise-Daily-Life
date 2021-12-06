@@ -21,6 +21,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
+import java.util.Random;
 
 public class StartActivity extends AppCompatActivity {
 
@@ -210,16 +211,44 @@ public class StartActivity extends AppCompatActivity {
     }
 
     private void addQuestions() {
-        questionsList.add(new QuizModel("이번주에 계획한 시간에 일어난 일수", " 0 ~ 1일",
-                " 2 ~ 3일", " 4일", " 5 ~ 6일", " 7일 모두"));
-        questionsList.add(new QuizModel("이번주에 친구와의 약속에 늦지 않은 횟수", " 1회 이하",
-                " 2회", " 3회", " 4회", " 5회 이상"));
-        questionsList.add(new QuizModel(" 이번주에 내가 좋아하는 일을 한 횟수", " 1회 이하",
-                " 2회", " 3회", " 4회", " 5회 이상"));
-        questionsList.add(new QuizModel("이번주에 누군가를 웃으면서 대한 횟수", " 2회 이하",
-                " 3회", " 4회", "5회", "6회 이상"));
-        questionsList.add(new QuizModel("이번주에 누군가에게 받은 칭찬 횟수", " 없음",
-                " 1회", " 2회", " 3회", " 4회 이상"));
+        QuizModel[] quizList = {
+                new QuizModel("이번주에 계획한 시간에 일어난 일수", " 0 ~ 1일",
+                        " 2 ~ 3일", " 4일", " 5 ~ 6일", " 7일 모두"),
+                new QuizModel("이번주에 친구와의 약속에 늦지 않은 횟수", " 1회 이하",
+                        " 2회", " 3회", " 4회", " 5회 이상"),
+                new QuizModel(" 이번주에 내가 좋아하는 일을 한 횟수", " 1회 이하",
+                        " 2회", " 3회", " 4회", " 5회 이상"),
+                new QuizModel("이번주에 누군가를 웃으면서 대한 횟수", " 2회 이하",
+                        " 3회", " 4회", "5회", "6회 이상"),
+                new QuizModel("이번주에 누군가에게 받은 칭찬 횟수", " 없음",
+                        " 1회", " 2회", " 3회", " 4회 이상"),
+                new QuizModel("이번주에 친구에게 먼저 연락한 횟수", " 없음",
+                        " 1회", " 2회", " 3회", " 4회 이상"),
+                new QuizModel("이번주에 강의나 과제를 제떄 수행한 횟수", " 없음",
+                        " 1회", " 2회", " 3회", " 4회 이상"),
+                new QuizModel("이번주에 내가 행복하다고 느낀 횟수", " 1회 이하",
+                        " 2회", " 3회", " 4회", " 5회 이상"),
+                new QuizModel("이번주에 누군가를 웃게 만든 횟수", " 1회 이하",
+                        " 2회", " 3회", " 4회", " 5회 이상"),
+                new QuizModel("이번주에 착한일을 한 횟수", " 1회 이하",
+                        " 2회", " 3회", " 4회", " 5회 이상")
+        };
+
+        Random rand = new Random();
+        int []randomIndexList = {-1, -1, -1, -1, -1};
+        for(int i = 0; i < 5; i++) {
+            int rValue = rand.nextInt(quizList.length);
+            for(int k = 0; k < i; k++) {
+                if(randomIndexList[k] == rValue) {
+                    i--;
+                    continue;
+                }
+            }
+            randomIndexList[i] = rValue;
+        }
+        for(int i = 0; i < 5; i++) {
+            questionsList.add(quizList[randomIndexList[i]]);
+        }
     }
 
 }
